@@ -4,11 +4,23 @@
 {% block title %} Novo Cliente {% endblock %}
 
 {% block main %}
-    <h4>Novo Cliente</h4>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form|bootstrap }}
-        <button type="submit" class="btn btn-primary">Salvar</button>
-    </form>
+
+    <div class="container-fluid">
+        <div class="row justify-content-start">
+            <div class="col">
+                <h4>Novo Cliente</h4>
+                <br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|bootstrap }}
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
