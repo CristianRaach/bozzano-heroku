@@ -1,24 +1,22 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
-{% block title %} Seja bem vindo {% endblock %}
+{% block title %} Bem vindo {% endblock %}
 
 {% block main %}
-
-    <div class="row">
-        <div class="col-sm">
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-lm">
+                <h1>Seja Bem Vindo</h1>
+            </div>
+            <div class="col-sm">
+                {% if user.is_authenticated %}
+                    <p>Ola {{ user.username }}</p>
+                    <a href="{% url 'logout' %}" class=" badge badge-dark">Sair</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-info">Entrar</a>
+                {% endif %}
+            </div>
         </div>
-        <div class="col-lm">
-            <h1>Seja Bem Vindo</h1>
-        </div>
-        <div class="col-sm">
-            {% if user.is_authenticated %}
-                <p>Ola {{ user.username }}</p>
-                <a href="{% url 'logout' %}" <span class=" badge badge-dark">Sair</span></a>
-            {% else %}
-                <a href="{% url 'login' %}" class="btn btn-info">Entrar</a>
-            {% endif %}
-        </div>
-    </div>
-
 {% endblock %}
-
