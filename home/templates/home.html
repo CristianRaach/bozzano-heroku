@@ -12,10 +12,9 @@
     <title>Bem Vindo</title>
 </head>
 <body>
-<br><br>
-    <div class="container">
-        <div class="jumbotron" align="center">
-            <br>
+    <div class="container" align="center">
+        <div class="jumbotron" align="center" style="width:400px; margin-top: 150px; height:400px;">
+            <br><br><br>
             <div class="row align-items-center">
                 <div class="col align-self-center">
                     <h1 align="center">Seja Bem Vindo</h1>
@@ -26,10 +25,10 @@
                 <div class="col-sm">
                 {% if user.is_authenticated %}
                     <h3>{{ user.username }}</h3>
-                     <a href="{% url 'person_list' %}" class="btn btn-primary btn-block col-md-2">Entrar</a>
-                    <a href="{% url 'logout' %}" class="btn btn-danger btn-block col-md-2">Sair</a>
+                    <a href="{% url 'person_list' %}" class="btn btn-primary btn-block col-md" style="width:200px;">Entrar</a>
+                    <a href="{% url 'logout' %}" class="btn btn-danger btn-block col-md" style="width:200px;">Sair</a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-primary btn-block col-md-2">Entrar</a>
+                    <a href="{% url 'login' %}" class="btn btn-primary btn-block col-md" style="width:200px;">Login</a>
                 {% endif %}
                 </div>
             </div>
