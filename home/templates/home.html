@@ -25,10 +25,11 @@
             <div class="row align-items-center">
                 <div class="col-sm">
                 {% if user.is_authenticated %}
-                    <p>Olá {{ user.username }}</p>
-                    <a href="{% url 'logout' %}" class=" badge badge-dark">Sair</a>
+                    <h3>{{ user.username }}</h3>
+                     <a href="{% url 'person_list' %}" class="btn btn-primary btn-block col-md-2">Entrar</a>
+                    <a href="{% url 'logout' %}" class="btn btn-danger btn-block col-md-2">Sair</a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-primary btn-block col-md-6">Entrar</a>
+                    <a href="{% url 'login' %}" class="btn btn-primary btn-block col-md-2">Entrar</a>
                 {% endif %}
                 </div>
             </div>
