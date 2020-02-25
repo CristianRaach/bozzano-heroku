@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'static.css' %}">
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
@@ -18,25 +18,43 @@
 <br>
 
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-<div class="btn-group dropright">
-  <button type="button" class="btn btn-secondary">
-    Split dropright
-  </button>
-  <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropright</span>
-  </button>
-  <div class="dropdown-menu">
-    <!-- Dropdown menu links -->
-  </div>
-</div>
+  <ul class="nav justify-content-end px-3" >
+      <div class="container" >
+          {% if user.is_authenticated %}
+             <h6 style="color: #fff;" > Olá {{user.username }}<a href="{% url 'logout' %}"> <span class="badge badge-pill badge-danger">Sair</span></a></h6>
+          {% endif %}
+      </div>
+  </ul>
 
-    <ul class="nav justify-content-end px-3" >
-        <div class="container" >
-            {% if user.is_authenticated %}
-               <h6 style="color: #fff;" > Olá {{user.username }}<a href="{% url 'logout' %}"> <span class="badge badge-pill badge-danger">Sair</span></a></h6>
-            {% endif %}
-        </div>
-    </ul>
+<form role="search" class="bd-search d-flex align-items-center">
+  <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span>
+  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3 collapsed" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Alternar navegação de documentos"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button>
+</form>
+
+<nav class="bd-links collapse" id="bd-docs-nav" aria-label="Navegação Principal" style="color: #fff;">
+    <div class="card card-body">
+      <h6 style="color: #fff;"> <a href="{% url 'center' %}">
+        <font style="vertical-align: inherit;">
+        Começandooooooooooooooooooooooooooooooooooooooooooo
+        </font></a></h6>
+
+      <ul class="nav bd-sidenav"><li class="active bd-sidenav-active">
+            <a href="/docs/4.4/getting-started/introduction/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+              Introdução
+            </font></font></a>
+          </li><li>
+            <a href="/docs/4.4/getting-started/download/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+              Baixar
+            </font></font></a>
+          </li><li>
+            <a href="/docs/4.4/getting-started/accessibility/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+              Acessibilidade
+            </font></font></a>
+          </li></ul>
+    </div>
+</nav>
+
+
 </nav>
 
 <div class="container-fluid">
@@ -131,5 +149,8 @@
          <a style="color: #fff;" href="https://www.linkedin.com/in/cristianraach" >Desenvolvido por Cristian Raach</a>
       </ul>
 </nav>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

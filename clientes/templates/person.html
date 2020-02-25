@@ -13,7 +13,7 @@
         </div>
         <div class="row justify-content-start">
             <div class="col">
-                <ul class="list-group">
+                <ul class="list-group" style="width: 420px;">
                     {% for person in persons %}
                     <li class="list-group-item">
                         <a href="{% url 'person_update' person.id  %}"> {{ person }}</a>
@@ -24,7 +24,7 @@
                     {% endfor %}
                 </ul>
                 <br>
-                <a href="{% url 'person_new' %}" class="btn btn-primary">Novo Cliente</a>
+                <a href="{% url 'person_new' %}" class="btn btn-primary">Adicionar Cliente</a>
             </div>
         </div>
     </div>
