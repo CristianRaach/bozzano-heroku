@@ -136,7 +136,7 @@ MEDIA_ROOT = 'media'
 
 LOGIN_URL = '/login/'
 
-LOGIN_REDIRECT_URL = 'person_list'
+LOGIN_REDIRECT_URL = 'center'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

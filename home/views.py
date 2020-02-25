@@ -9,3 +9,7 @@ def home(request):
 def my_logout(request):
     logout(request)
     return redirect('home')
+
+
+def center(request):
+    return render(request, 'center.html')

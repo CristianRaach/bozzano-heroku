@@ -6,10 +6,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js">
     <link rel="stylesheet" href="{% static 'static.css' %}">
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <title>{% block title %} {% endblock %}</title>
@@ -19,14 +18,25 @@
 <br>
 
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Bozzano</a>
-  <ul class="nav justify-content-end px-3" >
-        <button type="button" class="btn btn-secondary">
+<div class="btn-group dropright">
+  <button type="button" class="btn btn-secondary">
+    Split dropright
+  </button>
+  <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropright</span>
+  </button>
+  <div class="dropdown-menu">
+    <!-- Dropdown menu links -->
+  </div>
+</div>
+
+    <ul class="nav justify-content-end px-3" >
+        <div class="container" >
             {% if user.is_authenticated %}
-               <p>Olá {{user.username }}<a href="{% url 'logout' %}"> <span class="badge badge-pill badge-danger" >Sair</span></a></p>
+               <h6 style="color: #fff;" > Olá {{user.username }}<a href="{% url 'logout' %}"> <span class="badge badge-pill badge-danger">Sair</span></a></h6>
             {% endif %}
-        </button>
-  </ul>
+        </div>
+    </ul>
 </nav>
 
 <div class="container-fluid">
@@ -37,43 +47,43 @@
           <li class="nav-item">
             <a class="nav-link active" href="#">
               <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
+              DashBoard <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'center' %}">
               <span data-feather="file"></span>
-              Orders
+              Home
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="shopping-cart"></span>
-              Products
+              Produtos
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'person_list' %}">
               <span data-feather="users"></span>
-              Customers
+              Clientes
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2"></span>
-              Reports
+              Relatórios
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="layers"></span>
-              Integrations
+              Integrações
             </a>
           </li>
         </ul>
 
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Saved reports</span>
+          <span>Extras</span>
           <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
             <span data-feather="plus-circle"></span>
           </a>
@@ -114,5 +124,12 @@
     </main>
   </div>
 </div>
+<br>
+<br>
+<nav class="navbar navbar-dark fixed-bottom bg-dark flex-md-nowrap p-0 shadow justify-content-center">
+      <ul class="nav justify-content-center" >
+         <a style="color: #fff;" href="https://www.linkedin.com/in/cristianraach" >Desenvolvido por Cristian Raach</a>
+      </ul>
+</nav>
 </body>
 </html>
