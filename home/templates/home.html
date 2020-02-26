@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container" align="center">
-        <div class="jumbotron" align="center" style="width:400px; margin-top: 150px; height:400px;">
+        <div class="jumbotron" align="center" style="width:350px; margin-top: 150px; height:380px;">
             <br><br><br>
             <div class="row align-items-center">
                 <div class="col align-self-center">
@@ -26,9 +26,11 @@
                 <div class="col-sm">
                 {% if user.is_authenticated %}
                     <h3>{{ user.username }}</h3>
-                    <a href="{% url 'person_list' %}" class="btn btn-primary btn-block col-md" style="width:200px;">Entrar</a>
+                    <br>
+                    <a href="{% url 'center' %}" class="btn btn-primary btn-block col-md" style="width:200px;">Entrar</a>
                     <a href="{% url 'logout' %}" class="btn btn-danger btn-block col-md" style="width:200px;">Sair</a>
                 {% else %}
+                    <br>
                     <a href="{% url 'login' %}" class="btn btn-primary btn-block col-md" style="width:200px;">Login</a>
                 {% endif %}
                 </div>
