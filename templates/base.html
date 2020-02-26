@@ -18,44 +18,60 @@
 <br>
 
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <ul class="nav justify-content-end px-3" >
-      <div class="container" >
+  <ul class="nav justify-content-start px-3" >
+      <div class="container">
           {% if user.is_authenticated %}
              <h6 style="color: #fff;" > Olá {{user.username }}<a href="{% url 'logout' %}"> <span class="badge badge-pill badge-danger">Sair</span></a></h6>
           {% endif %}
       </div>
   </ul>
 
-<form role="search" class="bd-search d-flex align-items-center">
-  <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span>
-  <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3 collapsed" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Alternar navegação de documentos"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button>
-</form>
+  <form role="search" class="bd-search d-flex align-items-center">
+    <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span>
+    <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3 collapsed" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Alternar navegação de documentos"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button>
+  </form>
+</nav>
+    <div class="row">
+      <div class="col">
+        <nav class="bd-links collapse" id="bd-docs-nav" aria-label="Navegação Principal" style="color: #fff; margin: 20px;">
+            <div class="card card-body">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'center' %}">
+                      <span data-feather="home"></span>
+                      <h6 style="color: #000000;">Home</h6> <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
 
-<nav class="bd-links collapse" id="bd-docs-nav" aria-label="Navegação Principal" style="color: #fff;">
-    <div class="card card-body">
-      <h6 style="color: #fff;"> <a href="{% url 'center' %}">
-        <font style="vertical-align: inherit;">
-        Começandooooooooooooooooooooooooooooooooooooooooooo
-        </font></a></h6>
-
-      <ul class="nav bd-sidenav"><li class="active bd-sidenav-active">
-            <a href="/docs/4.4/getting-started/introduction/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-              Introdução
-            </font></font></a>
-          </li><li>
-            <a href="/docs/4.4/getting-started/download/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-              Baixar
-            </font></font></a>
-          </li><li>
-            <a href="/docs/4.4/getting-started/accessibility/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-              Acessibilidade
-            </font></font></a>
-          </li></ul>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'works' %}">
+                      <span data-feather="shopping-cart"></span>
+                        <h6 style="color: #000000;">Produtos</h6>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'person_list' %}">
+                      <span data-feather="users"></span>
+                        <h6 style="color: #000000;">Clientes</h6>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'works' %}">
+                      <span data-feather="bar-chart-2"></span>
+                        <h6 style="color: #000000;">Relatórios</h6>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'works' %}">
+                      <span data-feather="layers"></span>
+                        <h6 style="color: #000000;">Integrações</h6>
+                    </a>
+                  </li>
+               </ul>
+            </div>
+        </nav>
+      </div>
     </div>
-</nav>
-
-
-</nav>
 
 <div class="container-fluid">
   <div class="row">
@@ -63,19 +79,14 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="home"></span>
-              DashBoard <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{% url 'center' %}">
-              <span data-feather="file"></span>
+              <span data-feather="home"></span>
               Home
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'works' %}">
               <span data-feather="shopping-cart"></span>
               Produtos
             </a>
@@ -87,13 +98,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'works' %}">
               <span data-feather="bar-chart-2"></span>
               Relatórios
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'works' %}">
               <span data-feather="layers"></span>
               Integrações
             </a>

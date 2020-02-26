@@ -13,3 +13,7 @@ def my_logout(request):
 
 def center(request):
     return render(request, 'center.html')
+
+
+def works(request):
+    return render(request, 'works.html')
